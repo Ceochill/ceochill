@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header class="hero-section">
+        <img src="img/avatar.PNG" alt="Avatar Saya" class="profile-img">
+        
+        <h1 class="greeting">Hola_</h1>
+        <p class="bio">I'm <strong>Rayhan Azhar</strong>, a Graphic Designer, 3D Modeler, and Roblox Developer.</p>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/ceochill/" target="_blank">Instagram</a>
+            <a href="javascript:void(0)" onclick="toggleRobloxShowcase()">Roblox</a>
+            <a href="https://www.artstation.com/username_anda" target="_blank">ArtStation</a>
+        </div>
+    </header>
+
+    <div id="roblox-showcase" class="roblox-slide" style="display: none;">
+        <h3>My Roblox Profile & Games</h3>
+        
+        <div style="background: #161b22; border: 1px solid #30363d; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: left;">
+            <p style="margin-bottom: 10px; color: #d1d5da;"><strong>Username:</strong> Ceochilll</p>
+            <p style="margin-bottom: 15px; color: #d1d5da;"><strong>Role:</strong> Game Developer / Builder</p>
+            <a href="https://www.roblox.com/id/users/8767102762/profile" target="_blank" class="play-btn">Visit Roblox Profile ↗</a>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item-card">
+                <img src="img/roblox/Banjarmasin.png" alt="Banjarmasin Hangout" onclick="openModal('img/roblox/Banjarmasin.png')">
+                <div class="game-info">
+                    <h4>Banjarmasin Hangout</h4>
+                    <a href="https://www.roblox.com/id/games/77199630064144/Banjarmasin-Hangout" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+            
+            <div class="gallery-item-card">
+                <img src="img/roblox/Nusantara.png" alt="Nusantara Club" onclick="openModal('img/roblox/Nusantara.png')">
+                <div class="game-info">
+                    <h4>Nusantara Club</h4>
+                    <a href="https://www.roblox.com/id/games/124677728439154/Nusantara-Club" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+
+            <div class="gallery-item-card">
+                <img src="img/roblox/DesaAsa.png" alt="Desa Asal" onclick="openModal('img/roblox/DesaAsa.png')">
+                <div class="game-info">
+                    <h4>Desa Asal</h4>
+                    <a href="https://www.roblox.com/id/games/96055484437838/Desa-Asa" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+
+            <div class="gallery-item-card">
+                <img src="img/roblox/Survival.png" alt="Survival Hutan" onclick="openModal('img/roblox/Survival.png')">
+                <div class="game-info">
+                    <h4>Survival Hutan</h4>
+                    <a href="https://www.roblox.com/id/games/94367700404950/Hutan-Kalimantan" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+
+            <div class="gallery-item-card">
+                <img src="img/roblox/GhostHouse.png" alt="Ghost House" onclick="openModal('img/roblox/GhostHouse.png')">
+                <div class="game-info">
+                    <h4>Ghost House</h4>
+                    <a href="https://www.roblox.com/id/games/107064020400942/GHOST-HOUSE" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="portfolio-section">
+        <hr style="border: 0; border-top: 1px solid #30363d; margin: 20px 0 40px 0;">
+        <h2>My Works & Journey</h2>
+        
+        <div class="tab-buttons">
+             <button class="tab-btn active" onclick="openTab('grafis')">Graphic Design</button>
+             <button class="tab-btn" onclick="openTab('3d')">3D & Layout</button>
+             <button class="tab-btn" onclick="openTab('journey')">My Journey</button>
+        </div>
+
+        <div id="grafis" class="tab-content active-content">
+            <h3>Graphic Design</h3>
+            <p style="color: #a3a3a3; margin-bottom: 15px;">Beberapa karya desain grafis terbaik saya.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('img/grafis/GelasBUMN.png')"><img src="img/grafis/GelasBUMN.png" alt="Gelas BUMN"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/IDCardBUMN.png')"><img src="img/grafis/IDCardBUMN.png" alt="ID Card BUMN"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/JersyBUMN.png')"><img src="img/grafis/JersyBUMN.png" alt="Jersy BUMN"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/EnergiTanpaHenti.png')"><img src="img/grafis/EnergiTanpaHenti.png" alt="Energi Tanpa Henti"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/LogoInfinitBrand.png')"><img src="img/grafis/LogoInfinitBrand.png" alt="Logo Infinit Brand"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain1.png')"><img src="img/grafis/desain1.png" alt="Karya 1"></div>
+                 <div class="gallery-item" onclick="openModal('img/grafis/desain2.png')"><img src="img/grafis/desain2.png" alt="Karya Desain 2"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain3.png')"><img src="img/grafis/desain3.png" alt="Karya Desain 3"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain4.png')"><img src="img/grafis/desain4.png" alt="Karya Desain 4"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain5.png')"><img src="img/grafis/desain5.png" alt="Karya Desain 5"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain6.png')"><img src="img/grafis/desain6.png" alt="Karya Desain 6"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain7.png')"><img src="img/grafis/desain7.png" alt="Karya Desain 7"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain8.png')"><img src="img/grafis/desain8.png" alt="Karya Desain 8"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain9.png')"><img src="img/grafis/desain9.png" alt="Karya Desain 9"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain10.png')"><img src="img/grafis/desain10.png" alt="Karya Desain 10"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain11.png')"><img src="img/grafis/desain11.png" alt="Karya Desain 11"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain12.png')"><img src="img/grafis/desain12.png" alt="Karya Desain 12"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain13.png')"><img src="img/grafis/desain13.png" alt="Karya Desain 13"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain14.png')"><img src="img/grafis/desain14.png" alt="Karya Desain 14"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain15.png')"><img src="img/grafis/desain15.png" alt="Karya Desain 15"></div>
+                <div class="gallery-item" onclick="openModal('img/grafis/desain16.png')"><img src="img/grafis/desain16.png" alt="Karya Desain 16"></div>
+            </div>
+        </div>
+
+        <div id="3d" class="tab-content" style="display:none;">
+            <h3>3D Modeling & Layout</h3>
+            <p style="color: #a3a3a3; margin-bottom: 20px;">Render dan aset 3D yang telah saya buat.</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="img/3d/Areagate3.jpg" alt="Proyek 3D 1">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">SketchUp</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/3d/MainGateRev.jpg" alt="Proyek 3D 2">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">SketchUp</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/PanggungIndoor.png" alt="Proyek 3D 3">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">SketchUp</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/PanggungOutdoor2.jpg" alt="Proyek 3D 4">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">SketchUp</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/Walloffame.jpg" alt="Proyek 3D 5">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">SketchUp</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/MenaraPandang1.png" alt="Proyek 3D 6">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">Roblox</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/DesaAsa1.png" alt="Proyek 3D 7">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">Roblox</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/DesaAsa2.png" alt="Proyek 3D 8">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">Roblox</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/PatungBekantan.png" alt="Proyek 3D 9">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">Roblox</span>
+                        <span class="tag">Blender</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/Ganesha.png" alt="Proyek 3D 10">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">Roblox</span>
+                        <span class="tag">Blender</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/Garuda.png" alt="Proyek 3D 11">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                       <span class="tag">Roblox</span>
+                        <span class="tag">Blender</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/GWK.png" alt="Proyek 3D 12">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">Roblox</span>
+                        <span class="tag">Blender</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/Lion.png" alt="Proyek 3D 13">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">Roblox</span>
+                        <span class="tag">Blender</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/3d/NusantaraClub.png" alt="Proyek 3D 14">
+                    <div class="project-info">
+                        <h4>Low Poly Sword</h4>
+                        <span class="tag">Roblox</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="journey" class="tab-content" style="display:none;">
+            <h3>My Journey</h3>
+            <div class="bio-text" style="color: #d1d5da; line-height: 1.6; font-size: 0.95rem; text-align: left;">
+                <p style="margin-bottom: 15px;"><strong>2015: Rasa penasaran itu muncul</strong><br>
+                Cerita ini dimulai tahun 2015. Pas saya masih MTS, saya cuma iseng mikir, "Gimana ya caranya bikin sesuatu yang keren di komputer?" Ternyata, desain itu nggak sesimpel kelihatannya, tapi di situlah letak serunya. Saya sadar, teknologi itu media paling asyik buat numpahin ide di kepala jadi karya nyata.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>Prinsip Nekat & Belajar</strong><br>
+                Saya tipe orang yang percaya kalau "bisa" itu bukan cuma bakat lahir, tapi hasil dari nekat. Saya sering banget ambil proyek yang sebenarnya saya belum jago-jago amat, tapi dari situlah saya "terpaksa" belajar cepat sambil jalan. Bagi saya, tekanan itu guru terbaik.</p>
+
+                <p style="margin-bottom: 15px;"><strong>Jalan Panjang Sebelum Jadi Developer</strong><br>
+                Perjalanan saya lumayan berwarna. Pernah jadi tim dokumentasi, terjun ke dunia marketing, sampai dipercaya jadi Media Specialist yang ngebangun divisi visual dari nol. Pengalaman-pengalaman itu bikin saya paham kalau desain itu bukan cuma soal visual yang bagus, tapi soal gimana pesan kita sampai ke orang lain.</p>
+
+                <p style="margin-bottom: 15px;"><strong>Menemukan Rumah di Roblox</strong><br>
+                Awalnya cuma sekadar main game, eh malah keterusan pengen bikin dunianya sendiri. Waktu saya nekat jadi developer game bertema provinsi di Kalimantan Selatan, saya belajar banyak banget soal komunitas. Bukan soal angka traffic nya, tapi soal rasa senang ketika tahu ada orang lain yang ngerasa terhibur sama karya saya.</p>
+
+                <p style="margin-bottom: 15px;"><strong>Apa selanjutnya?</strong><br>
+                Jujur, saya nggak mau membatasi diri di satu kotak aja. Saya ingin terus eksplor hal-hal baru di dunia digital, baik itu desain, 3D, maupun programming. Tujuan saya simpel: semoga setiap karya yang saya bikin bisa kasih manfaat—atau minimal bikin orang lain tersenyum.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
