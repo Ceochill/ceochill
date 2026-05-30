@@ -7,32 +7,21 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Animasi Mengetik (Typing Effect) untuk Greeting */
+        /* Styling untuk area teks sapaan */
         .greeting {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 15px 0;
+            min-height: 40px; /* Menjaga agar layout tidak naik-turun saat teks dihapus */
         }
 
-        .typewriter {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            /* steps(4) artinya animasi berjalan dalam 4 ketukan sesuai jumlah huruf "Hola" */
-            animation: typing 1.5s steps(4, end) forwards;
-            max-width: 0;
-        }
-
+        /* Animasi kursor berkedip */
         .blink {
-            /* Membuat kursor underscore berkedip tiada henti */
             animation: blinking 0.9s infinite step-end;
             margin-left: 2px;
-        }
-
-        @keyframes typing {
-            from { max-width: 0; }
-            to { max-width: 150px; } 
+            font-weight: bold;
+            color: #d1d5da; /* Menyesuaikan warna kursor */
         }
 
         @keyframes blinking {
@@ -46,7 +35,7 @@
    <header class="hero-section">
         <img src="img/avatar.PNG" alt="Avatar Saya" class="profile-img">
         
-        <h1 class="greeting"><span class="typewriter">Hello...</span><span class="blink">_</span></h1>
+        <h1 class="greeting"><span id="typewriter"></span><span class="blink">_</span></h1>
         
         <p class="bio">I'm <strong>Rayhan Azhar</strong>, a Graphic Designer, 3D Modeler, and Roblox Developer.</p>
         
@@ -67,47 +56,48 @@
         </div>
 
        <div class="gallery-grid">
-    <div class="gallery-item-card">
-        <img src="img/Roblox/Banjarmasin.PNG" alt="Banjarmasin Hangout" onclick="openModal('img/Roblox/Banjarmasin.PNG')">
-        <div class="game-info">
-            <h4>Banjarmasin Hangout</h4>
-            <a href="https://www.roblox.com/id/games/77199630064144/Banjarmasin-Hangout" target="_blank" class="play-btn">Play Game</a>
+            <div class="gallery-item-card">
+                <img src="img/Roblox/Banjarmasin.PNG" alt="Banjarmasin Hangout" onclick="openModal('img/Roblox/Banjarmasin.PNG')">
+                <div class="game-info">
+                    <h4>Banjarmasin Hangout</h4>
+                    <a href="https://www.roblox.com/id/games/77199630064144/Banjarmasin-Hangout" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+            
+            <div class="gallery-item-card">
+                <img src="img/Roblox/Nusantara.png" alt="Nusantara Club" onclick="openModal('img/Roblox/Nusantara.png')">
+                <div class="game-info">
+                    <h4>Nusantara Club</h4>
+                    <a href="https://www.roblox.com/id/games/124677728439154/Nusantara-Club" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+
+            <div class="gallery-item-card">
+                <img src="img/Roblox/DesaAsa.png" alt="Desa Asal" onclick="openModal('img/Roblox/DesaAsa.png')">
+                <div class="game-info">
+                    <h4>Desa Asal</h4>
+                    <a href="https://www.roblox.com/id/games/96055484437838/Desa-Asa" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+
+            <div class="gallery-item-card">
+                <img src="img/Roblox/Survival.png" alt="Survival Hutan" onclick="openModal('img/Roblox/Survival.png')">
+                <div class="game-info">
+                    <h4>Survival Hutan</h4>
+                    <a href="https://www.roblox.com/id/games/94367700404950/Hutan-Kalimantan" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
+
+            <div class="gallery-item-card">
+                <img src="img/Roblox/GhostHouse.PNG" alt="Ghost House" onclick="openModal('img/Roblox/GhostHouse.PNG')">
+                <div class="game-info">
+                    <h4>Ghost House</h4>
+                    <a href="https://www.roblox.com/id/games/107064020400942/GHOST-HOUSE" target="_blank" class="play-btn">Play Game</a>
+                </div>
+            </div>
         </div>
     </div>
     
-    <div class="gallery-item-card">
-        <img src="img/Roblox/Nusantara.png" alt="Nusantara Club" onclick="openModal('img/Roblox/Nusantara.png')">
-        <div class="game-info">
-            <h4>Nusantara Club</h4>
-            <a href="https://www.roblox.com/id/games/124677728439154/Nusantara-Club" target="_blank" class="play-btn">Play Game</a>
-        </div>
-    </div>
-
-    <div class="gallery-item-card">
-        <img src="img/Roblox/DesaAsa.png" alt="Desa Asal" onclick="openModal('img/Roblox/DesaAsa.png')">
-        <div class="game-info">
-            <h4>Desa Asal</h4>
-            <a href="https://www.roblox.com/id/games/96055484437838/Desa-Asa" target="_blank" class="play-btn">Play Game</a>
-        </div>
-    </div>
-
-    <div class="gallery-item-card">
-        <img src="img/Roblox/Survival.png" alt="Survival Hutan" onclick="openModal('img/Roblox/Survival.png')">
-        <div class="game-info">
-            <h4>Survival Hutan</h4>
-            <a href="https://www.roblox.com/id/games/94367700404950/Hutan-Kalimantan" target="_blank" class="play-btn">Play Game</a>
-        </div>
-    </div>
-
-    <div class="gallery-item-card">
-        <img src="img/Roblox/GhostHouse.PNG" alt="Ghost House" onclick="openModal('img/Roblox/GhostHouse.PNG')">
-        <div class="game-info">
-            <h4>Ghost House</h4>
-            <a href="https://www.roblox.com/id/games/107064020400942/GHOST-HOUSE" target="_blank" class="play-btn">Play Game</a>
-        </div>
-    </div>
-</div>
-    </div>
     <main class="portfolio-section">
         <hr style="border: 0; border-top: 1px solid #30363d; margin: 20px 0 40px 0;">
         <h2>My Works & Journey</h2>
@@ -286,5 +276,50 @@
     </div>
 
     <script src="script.js"></script>
+
+    <script>
+        const typedTextSpan = document.getElementById("typewriter");
+        
+        // Daftar sapaan yang akan muncul bergantian
+        const textArray = ["Halo", "Hello", "你好", "こんにちは"];
+        
+        const typingDelay = 150;    // Kecepatan ngetik per huruf (ms)
+        const erasingDelay = 100;   // Kecepatan hapus per huruf (ms)
+        const newTextDelay = 2000;  // Waktu diam sebelum mulai dihapus (ms)
+        
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                // Jika kata sudah selesai diketik, tunggu sebentar lalu hapus
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                // Pindah ke kata berikutnya
+                textArrayIndex++;
+                // Jika sudah di ujung daftar, kembali ke kata pertama
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                // Jeda sebentar sebelum ngetik kata baru
+                setTimeout(type, typingDelay + 500);
+            }
+        }
+
+        // Mulai animasi ketika website selesai dimuat
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(type, 1000); // Mulai setelah jeda 1 detik
+        });
+    </script>
 </body>
 </html>
