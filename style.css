@@ -487,6 +487,8 @@ body {
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
+    position: relative; 
+    z-index: 99; /* Angka diperbesar agar dipaksa maju ke depan */
 }
 
 .cta-button {
@@ -504,6 +506,17 @@ body {
 .cta-button:hover {
     background-color: #238636;
     transform: translateY(-2px);
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-top: auto; /* Membantu mendorong footer ke paling bawah */
+    width: 100%;
+    position: relative; 
+    z-index: 99; /* Dipaksa tampil di atas animasi background */
 }
 
 .footer {
