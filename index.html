@@ -4,49 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
+    <link rel="icon" type="image/png" href="img/avatar.PNG">
     <link rel="stylesheet" href="style.css">
-    
-    <style>
-        /* Styling untuk area teks sapaan */
-        .greeting {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 15px 0;
-            min-height: 40px; /* Menjaga agar layout tidak naik-turun saat teks dihapus */
-        }
-
-        /* Animasi kursor berkedip */
-        .blink {
-            animation: blinking 0.9s infinite step-end;
-            margin-left: 2px;
-            font-weight: bold;
-            color: #d1d5da; /* Menyesuaikan warna kursor */
-        }
-
-        @keyframes blinking {
-            from, to { opacity: 1; }
-            50% { opacity: 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-   <header class="hero-section">
+   <header class="hero-section fade-in">
         <img src="img/avatar.PNG" alt="Avatar Saya" class="profile-img">
         
         <h1 class="greeting"><span id="typewriter"></span><span class="blink">_</span></h1>
         
         <p class="bio">I'm <strong>Rayhan Azhar</strong>, a Graphic Designer, 3D Modeler, and Roblox Developer.</p>
         
-        <div class="social-links">
-            <a href="https://www.instagram.com/ceochill/" target="_blank">Instagram</a>
-            <a href="javascript:void(0)" onclick="toggleRobloxShowcase()">Roblox</a>
-            <a href="https://www.artstation.com/username_anda" target="_blank">ArtStation</a>
-        </div>
+        <div class="software-tools">
+    <span class="tool-badge"><i class="fa-solid fa-pen-nib"></i> Photoshop</span>
+    <span class="tool-badge"><i class="fa-solid fa-bezier-curve"></i> Illustrator</span>
+    <span class="tool-badge"><i class="fa-solid fa-cube"></i> Blender</span>
+    <span class="tool-badge"><i class="fa-solid fa-building"></i> SketchUp</span>
+    <span class="tool-badge"><i class="fa-solid fa-film"></i> Premiere</span>
+    <span class="tool-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> After Effects</span>
+    <span class="tool-badge"><i class="fa-solid fa-gamepad"></i> Roblox Studio</span>
+</div>
+
+<div class="social-links">
+    <a href="https://www.instagram.com/ceochill/" target="_blank">
+        <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
+    <a href="javascript:void(0)" onclick="toggleRobloxShowcase()">
+        <i class="fa-solid fa-gamepad"></i> Roblox
+    </a>
+    <a href="https://www.artstation.com/?sort_by=community&dimension=all" target="_blank">
+        <i class="fa-brands fa-artstation"></i> ArtStation
+    </a>
+</div>
     </header>
 
-    <div id="roblox-showcase" class="roblox-slide" style="display: none;">
+    <div id="roblox-showcase" class="roblox-slide fade-in" style="display: none;">
         <h3>My Roblox Profile & Games</h3>
         
         <div style="background: #161b22; border: 1px solid #30363d; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: left;">
@@ -56,49 +50,15 @@
         </div>
 
        <div class="gallery-grid">
-            <div class="gallery-item-card">
-                <img src="img/Roblox/Banjarmasin.PNG" alt="Banjarmasin Hangout" onclick="openModal('img/Roblox/Banjarmasin.PNG')">
-                <div class="game-info">
-                    <h4>Banjarmasin Hangout</h4>
-                    <a href="https://www.roblox.com/id/games/77199630064144/Banjarmasin-Hangout" target="_blank" class="play-btn">Play Game</a>
-                </div>
-            </div>
-            
-            <div class="gallery-item-card">
-                <img src="img/Roblox/Nusantara.png" alt="Nusantara Club" onclick="openModal('img/Roblox/Nusantara.png')">
-                <div class="game-info">
-                    <h4>Nusantara Club</h4>
-                    <a href="https://www.roblox.com/id/games/124677728439154/Nusantara-Club" target="_blank" class="play-btn">Play Game</a>
-                </div>
-            </div>
-
-            <div class="gallery-item-card">
-                <img src="img/Roblox/DesaAsa.png" alt="Desa Asal" onclick="openModal('img/Roblox/DesaAsa.png')">
-                <div class="game-info">
-                    <h4>Desa Asal</h4>
-                    <a href="https://www.roblox.com/id/games/96055484437838/Desa-Asa" target="_blank" class="play-btn">Play Game</a>
-                </div>
-            </div>
-
-            <div class="gallery-item-card">
-                <img src="img/Roblox/Survival.png" alt="Survival Hutan" onclick="openModal('img/Roblox/Survival.png')">
-                <div class="game-info">
-                    <h4>Survival Hutan</h4>
-                    <a href="https://www.roblox.com/id/games/94367700404950/Hutan-Kalimantan" target="_blank" class="play-btn">Play Game</a>
-                </div>
-            </div>
-
-            <div class="gallery-item-card">
-                <img src="img/Roblox/GhostHouse.PNG" alt="Ghost House" onclick="openModal('img/Roblox/GhostHouse.PNG')">
-                <div class="game-info">
-                    <h4>Ghost House</h4>
-                    <a href="https://www.roblox.com/id/games/107064020400942/GHOST-HOUSE" target="_blank" class="play-btn">Play Game</a>
-                </div>
-            </div>
+            <div class="gallery-item-card"><img src="img/Roblox/Banjarmasin.PNG" alt="Banjarmasin Hangout" onclick="openModal('img/Roblox/Banjarmasin.PNG')"><div class="game-info"><h4>Banjarmasin Hangout</h4><a href="https://www.roblox.com/id/games/77199630064144/Banjarmasin-Hangout" target="_blank" class="play-btn">Play Game</a></div></div>
+            <div class="gallery-item-card"><img src="img/Roblox/Nusantara.png" alt="Nusantara Club" onclick="openModal('img/Roblox/Nusantara.png')"><div class="game-info"><h4>Nusantara Club</h4><a href="https://www.roblox.com/id/games/124677728439154/Nusantara-Club" target="_blank" class="play-btn">Play Game</a></div></div>
+            <div class="gallery-item-card"><img src="img/Roblox/DesaAsa.png" alt="Desa Asal" onclick="openModal('img/Roblox/DesaAsa.png')"><div class="game-info"><h4>Desa Asal</h4><a href="https://www.roblox.com/id/games/96055484437838/Desa-Asa" target="_blank" class="play-btn">Play Game</a></div></div>
+            <div class="gallery-item-card"><img src="img/Roblox/Survival.png" alt="Survival Hutan" onclick="openModal('img/Roblox/Survival.png')"><div class="game-info"><h4>Survival Hutan</h4><a href="https://www.roblox.com/id/games/94367700404950/Hutan-Kalimantan" target="_blank" class="play-btn">Play Game</a></div></div>
+            <div class="gallery-item-card"><img src="img/Roblox/GhostHouse.PNG" alt="Ghost House" onclick="openModal('img/Roblox/GhostHouse.PNG')"><div class="game-info"><h4>Ghost House</h4><a href="https://www.roblox.com/id/games/107064020400942/GHOST-HOUSE" target="_blank" class="play-btn">Play Game</a></div></div>
         </div>
     </div>
     
-    <main class="portfolio-section">
+    <main class="portfolio-section fade-in">
         <hr style="border: 0; border-top: 1px solid #30363d; margin: 20px 0 40px 0;">
         <h2>My Works & Journey</h2>
         
@@ -108,11 +68,10 @@
              <button class="tab-btn" onclick="openTab('journey')">My Journey</button>
         </div>
 
-        <div id="grafis" class="tab-content active-content">
+        <div id="grafis" class="tab-content active-content fade-in">
             <h3>Graphic Design</h3>
             <p style="color: #a3a3a3; margin-bottom: 15px;">Beberapa karya desain grafis terbaik saya.</p>
-            
-            <div class="gallery-grid">
+           <div class="gallery-grid">
                 <div class="gallery-item" onclick="openModal('img/grafis/GelasBUMN.png')"><img src="img/grafis/GelasBUMN.png" alt="Gelas BUMN"></div>
                 <div class="gallery-item" onclick="openModal('img/grafis/IDCardBUMN.png')"><img src="img/grafis/IDCardBUMN.png" alt="ID Card BUMN"></div>
                 <div class="gallery-item" onclick="openModal('img/grafis/JersyBUMN.png')"><img src="img/grafis/JersyBUMN.png" alt="Jersy BUMN"></div>
@@ -137,10 +96,9 @@
             </div>
         </div>
 
-        <div id="3d" class="tab-content" style="display:none;">
+        <div id="3d" class="tab-content fade-in" style="display:none;">
             <h3>3D Modeling & Layout</h3>
             <p style="color: #a3a3a3; margin-bottom: 20px;">Render dan aset 3D yang telah saya buat.</p>
-            
             <div class="project-grid">
                 <div class="project-card">
                     <img src="img/3d/Areagate3.jpg" alt="Proyek 3D 1">
@@ -247,28 +205,27 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="journey" class="tab-content" style="display:none;">
+        <div id="journey" class="tab-content fade-in" style="display:none;">
             <h3>My Journey</h3>
             <div class="bio-text" style="color: #d1d5da; line-height: 1.6; font-size: 0.95rem; text-align: left;">
-                <p style="margin-bottom: 15px;"><strong>2015: Rasa penasaran itu muncul</strong><br>
-                Cerita ini dimulai tahun 2015. Pas saya masih MTS, saya cuma iseng mikir, "Gimana ya caranya bikin sesuatu yang keren di komputer?" Ternyata, desain itu nggak sesimpel kelihatannya, tapi di situlah letak serunya. Saya sadar, teknologi itu media paling asyik buat numpahin ide di kepala jadi karya nyata.</p>
-                
-                <p style="margin-bottom: 15px;"><strong>Prinsip Nekat & Belajar</strong><br>
-                Saya tipe orang yang percaya kalau "bisa" itu bukan cuma bakat lahir, tapi hasil dari nekat. Saya sering banget ambil proyek yang sebenarnya saya belum jago-jago amat, tapi dari situlah saya "terpaksa" belajar cepat sambil jalan. Bagi saya, tekanan itu guru terbaik.</p>
-
-                <p style="margin-bottom: 15px;"><strong>Jalan Panjang Sebelum Jadi Developer</strong><br>
-                Perjalanan saya lumayan berwarna. Pernah jadi tim dokumentasi, terjun ke dunia marketing, sampai dipercaya jadi Media Specialist yang ngebangun divisi visual dari nol. Pengalaman-pengalaman itu bikin saya paham kalau desain itu bukan cuma soal visual yang bagus, tapi soal gimana pesan kita sampai ke orang lain.</p>
-
-                <p style="margin-bottom: 15px;"><strong>Menemukan Rumah di Roblox</strong><br>
-                Awalnya cuma sekadar main game, eh malah keterusan pengen bikin dunianya sendiri. Waktu saya nekat jadi developer game bertema provinsi di Kalimantan Selatan, saya belajar banyak banget soal komunitas. Bukan soal angka traffic nya, tapi soal rasa senang ketika tahu ada orang lain yang ngerasa terhibur sama karya saya.</p>
-
-                <p style="margin-bottom: 15px;"><strong>Apa selanjutnya?</strong><br>
-                Jujur, saya nggak mau membatasi diri di satu kotak aja. Saya ingin terus eksplor hal-hal baru di dunia digital, baik itu desain, 3D, maupun programming. Tujuan saya simpel: semoga setiap karya yang saya bikin bisa kasih manfaat—atau minimal bikin orang lain tersenyum.</p>
+                <p style="margin-bottom: 15px;"><strong>2015: Rasa penasaran itu muncul</strong><br>Cerita ini dimulai tahun 2015...</p>
+                <p style="margin-bottom: 15px;"><strong>Prinsip Nekat & Belajar</strong><br>Saya tipe orang yang percaya...</p>
+                <p style="margin-bottom: 15px;"><strong>Jalan Panjang Sebelum Jadi Developer</strong><br>Perjalanan saya lumayan berwarna...</p>
             </div>
         </div>
+
+        <div class="cta-section fade-in">
+            <h2 style="margin-bottom: 10px;">Let's Create Something Amazing!</h2>
+            <p style="color: #a3a3a3; margin-bottom: 20px;">Tertarik untuk berkolaborasi atau ngobrol soal project?</p>
+            <a href="mailto:emailkamu@gmail.com" class="cta-button">Hire Me / Hubungi Saya</a>
+        </div>
+
     </main>
+
+    <footer class="footer fade-in">
+        © 2026 Rayhan Azhar. All rights reserved.
+    </footer>
 
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close-btn">&times;</span>
@@ -279,14 +236,10 @@
 
     <script>
         const typedTextSpan = document.getElementById("typewriter");
-        
-        // Daftar sapaan yang akan muncul bergantian
         const textArray = ["Halo", "Hello", "你好", "こんにちは"];
-        
-        const typingDelay = 150;    // Kecepatan ngetik per huruf (ms)
-        const erasingDelay = 100;   // Kecepatan hapus per huruf (ms)
-        const newTextDelay = 2000;  // Waktu diam sebelum mulai dihapus (ms)
-        
+        const typingDelay = 150;
+        const erasingDelay = 100;
+        const newTextDelay = 2000;
         let textArrayIndex = 0;
         let charIndex = 0;
 
@@ -296,7 +249,6 @@
                 charIndex++;
                 setTimeout(type, typingDelay);
             } else {
-                // Jika kata sudah selesai diketik, tunggu sebentar lalu hapus
                 setTimeout(erase, newTextDelay);
             }
         }
@@ -307,18 +259,14 @@
                 charIndex--;
                 setTimeout(erase, erasingDelay);
             } else {
-                // Pindah ke kata berikutnya
                 textArrayIndex++;
-                // Jika sudah di ujung daftar, kembali ke kata pertama
                 if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-                // Jeda sebentar sebelum ngetik kata baru
                 setTimeout(type, typingDelay + 500);
             }
         }
 
-        // Mulai animasi ketika website selesai dimuat
         document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(type, 1000); // Mulai setelah jeda 1 detik
+            setTimeout(type, 1000);
         });
     </script>
 </body>
