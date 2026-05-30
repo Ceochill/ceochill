@@ -5,13 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Animasi Mengetik (Typing Effect) untuk Greeting */
+        .greeting {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            /* steps(4) artinya animasi berjalan dalam 4 ketukan sesuai jumlah huruf "Hola" */
+            animation: typing 1.5s steps(4, end) forwards;
+            max-width: 0;
+        }
+
+        .blink {
+            /* Membuat kursor underscore berkedip tiada henti */
+            animation: blinking 0.9s infinite step-end;
+            margin-left: 2px;
+        }
+
+        @keyframes typing {
+            from { max-width: 0; }
+            to { max-width: 150px; } 
+        }
+
+        @keyframes blinking {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
 
    <header class="hero-section">
         <img src="img/avatar.PNG" alt="Avatar Saya" class="profile-img">
         
-        <h1 class="greeting">Hola_</h1>
+        <h1 class="greeting"><span class="typewriter">Hello...</span><span class="blink">_</span></h1>
+        
         <p class="bio">I'm <strong>Rayhan Azhar</strong>, a Graphic Designer, 3D Modeler, and Roblox Developer.</p>
         
         <div class="social-links">
