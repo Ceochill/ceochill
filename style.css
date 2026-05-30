@@ -361,33 +361,34 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 8px; /* Diperkecil dari 10px agar jarak antar badge lebih rapat */
+    margin-bottom: 20px; /* Diperkecil dari 25px */
 }
+
 .tool-badge {
     display: flex;
     align-items: center;
     background-color: #21262d;
     border: 1px solid #30363d;
-    padding: 6px 14px 6px 6px; /* Padding kiri lebih kecil biar ikon muat */
+    padding: 4px 10px 4px 4px; /* Padding diperkecil (atas-bawah 4px, kanan 10px, kiri 4px) */
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.75rem; /* Font teks diperkecil dari 0.85rem */
     color: #c9d1d9;
     font-weight: 500;
-    gap: 8px; /* Jarak antara ikon dan teks */
+    gap: 6px; /* Jarak antara lingkaran ikon dan teks diperkecil */
 }
 
-/* 3.1 Styling Ikon Lingkaran (Tambahan Baru) */
+/* 3.1 Styling Ikon Lingkaran */
 .tool-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24px;
-    height: 24px;
+    width: 20px; /* Lingkaran ikon diperkecil dari 24px */
+    height: 20px; /* Lingkaran ikon diperkecil dari 24px */
     background-color: #30363d;
     color: #58a6ff;
     border-radius: 50%;
-    font-size: 0.75rem;
+    font-size: 0.65rem; /* Ukuran ikon FontAwesome di dalamnya diperkecil */
 }
 
 .social-links a {
