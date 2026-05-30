@@ -205,13 +205,25 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-        <div id="journey" class="tab-content fade-in" style="display:none;">
+        <div id="journey" class="tab-content" style="display:none;">
             <h3>My Journey</h3>
             <div class="bio-text" style="color: #d1d5da; line-height: 1.6; font-size: 0.95rem; text-align: left;">
-                <p style="margin-bottom: 15px;"><strong>2015: Rasa penasaran itu muncul</strong><br>Cerita ini dimulai tahun 2015...</p>
-                <p style="margin-bottom: 15px;"><strong>Prinsip Nekat & Belajar</strong><br>Saya tipe orang yang percaya...</p>
-                <p style="margin-bottom: 15px;"><strong>Jalan Panjang Sebelum Jadi Developer</strong><br>Perjalanan saya lumayan berwarna...</p>
+                <p style="margin-bottom: 15px;"><strong>2015: Rasa penasaran itu muncul</strong><br>
+                Cerita ini dimulai tahun 2015. Pas saya masih MTS, saya cuma iseng mikir, "Gimana ya caranya bikin sesuatu yang keren di komputer?" Ternyata, desain itu nggak sesimpel kelihatannya, tapi di situlah letak serunya. Saya sadar, teknologi itu media paling asyik buat numpahin ide di kepala jadi karya nyata.</p>
+                
+                <p style="margin-bottom: 15px;"><strong>Prinsip Nekat & Belajar</strong><br>
+                Saya tipe orang yang percaya kalau "bisa" itu bukan cuma bakat lahir, tapi hasil dari nekat. Saya sering banget ambil proyek yang sebenarnya saya belum jago-jago amat, tapi dari situlah saya "terpaksa" belajar cepat sambil jalan. Bagi saya, tekanan itu guru terbaik.</p>
+
+                <p style="margin-bottom: 15px;"><strong>Jalan Panjang Sebelum Jadi Developer</strong><br>
+                Perjalanan saya lumayan berwarna. Pernah jadi tim dokumentasi, terjun ke dunia marketing, sampai dipercaya jadi Media Specialist yang ngebangun divisi visual dari nol. Pengalaman-pengalaman itu bikin saya paham kalau desain itu bukan cuma soal visual yang bagus, tapi soal gimana pesan kita sampai ke orang lain.</p>
+
+                <p style="margin-bottom: 15px;"><strong>Menemukan Rumah di Roblox</strong><br>
+                Awalnya cuma sekadar main game, eh malah keterusan pengen bikin dunianya sendiri. Waktu saya nekat jadi developer game bertema provinsi di Kalimantan Selatan, saya belajar banyak banget soal komunitas. Bukan soal angka traffic nya, tapi soal rasa senang ketika tahu ada orang lain yang ngerasa terhibur sama karya saya.</p>
+
+                <p style="margin-bottom: 15px;"><strong>Apa selanjutnya?</strong><br>
+                Jujur, saya nggak mau membatasi diri di satu kotak aja. Saya ingin terus eksplor hal-hal baru di dunia digital, baik itu desain, 3D, maupun programming. Tujuan saya simpel: semoga setiap karya yang saya bikin bisa kasih manfaat atau minimal bikin orang lain tersenyum.</p>
             </div>
         </div>
 
@@ -235,6 +247,35 @@
     <script src="script.js"></script>
 
     <script>
+        // --- FUNGSI TAB YANG SAYA TAMBAHKAN AGAR BISA DIKLIK ---
+        function openTab(tabId) {
+            // Sembunyikan semua isi tab
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Hilangkan warna aktif dari semua tombol
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Munculkan isi tab yang dipilih
+            const selectedContent = document.getElementById(tabId);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+            }
+
+            // Beri warna aktif pada tombol yang sedang diklik
+            const activeBtn = document.querySelector(`.tab-btn[onclick="openTab('${tabId}')"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+        }
+        // -------------------------------------------------------
+
+        // --- EFEK KETIK (Kode kamu tidak saya ubah) ---
         const typedTextSpan = document.getElementById("typewriter");
         const textArray = ["Halo", "Hello", "你好", "こんにちは"];
         const typingDelay = 150;
