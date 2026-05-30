@@ -6,17 +6,79 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Mengatur latar belakang menjadi Dark Mode (Biru Gelap) */
+/* Mengatur latar belakang Dasar */
 body {
-    background-color: #0d1117;
+    background-color: #0d1117; 
     color: #ffffff;
+    padding: 40px 20px;
+    overflow-x: hidden; 
+    min-height: 100vh;
+}
+
+/* === WADAH UTAMA KONTEN === */
+.main-wrapper {
+    position: relative;
+    z-index: 10; /* Penting agar konten tidak tertutup background */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px;
+    width: 100%;
 }
 
+/* ======================================================== */
+/* === EFEK VISUAL BACKGROUND: GRID & GARIS DENYUT NADI === */
+/* ======================================================== */
+.waves-container {
+    position: fixed; 
+    width: 100%;
+    height: 100vh; 
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    /* Membuat latar belakang pola jaring/grid tipis */
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Garis Cahaya yang bergerak (Denyut Nadi / Cyber Flow) */
+.wave {
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: linear-gradient(180deg, transparent, #4facfe, #ffffff);
+    box-shadow: 0 0 15px #4facfe; /* Efek menyala */
+    top: -150px; /* Mulai dari luar layar atas */
+    opacity: 0.7;
+    border-radius: 50%;
+    animation: pulseDown linear infinite;
+}
+
+/* Mengatur posisi dan kecepatan masing-masing garis */
+#wave1 { left: 15%; animation-duration: 4s; animation-delay: 0s; }
+#wave2 { 
+    left: 45%; 
+    animation-duration: 5.5s; 
+    animation-delay: 2s; 
+    width: 3px; 
+    background: linear-gradient(180deg, transparent, #a18cd1, #ffffff); 
+    box-shadow: 0 0 15px #a18cd1; /* Warna ungu estetik */
+}
+#wave3 { left: 75%; animation-duration: 3.5s; animation-delay: 1s; }
+#wave4 { left: 90%; animation-duration: 6s; animation-delay: 3s; opacity: 0.4; }
+
+/* Animasi Garis Jatuh ke Bawah */
+@keyframes pulseDown {
+    0% { transform: translateY(-150px); opacity: 0; }
+    10% { opacity: 0.8; }
+    80% { opacity: 0.8; }
+    100% { transform: translateY(110vh); opacity: 0; }
+}
+
+/* ======================================================== */
 /* === BAGIAN HERO (ATAS) === */
+/* ======================================================== */
 .hero-section {
     text-align: center;
     max-width: 500px;
@@ -30,7 +92,6 @@ body {
     object-fit: cover;
 }
 
-/* Efek Teks Gradasi untuk tulisan Hola_ */
 .greeting {
     font-size: 2.5rem;
     font-weight: bold;
@@ -55,104 +116,73 @@ body {
 .social-links a {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
-    background: #21262d;
-    padding: 8px 16px;
-    border-radius: 20px;
     color: #c9d1d9;
-    margin: 5px;
-    transition: 0.3s;
-    
-    /* Tambahkan baris ini (atur angkanya sesuai keinginanmu) */
-    gap: 15px; 
-}
-
-.social-links a {
-    text-decoration: none;
-    color: #ffffff;
     background-color: #161b22;
     border: 1px solid #30363d;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
     font-size: 0.9rem;
+    margin: 5px;
     transition: 0.3s;
+    gap: 10px;
 }
 
 .social-links a:hover {
     background-color: #30363d;
-}
-
-/* === SLIDE ROBLOX SHOWCASE (BARU) === */
-.roblox-slide {
-    width: 100%;
-    max-width: 500px;
-    background-color: #0d1117;
-    text-align: center;
-    margin-bottom: 20px;
-    animation: slideDown 0.4s ease-out;
-}
-
-.roblox-slide h3 {
-    margin-bottom: 20px;
-    color: #4facfe;
-    font-size: 1.5rem;
-}
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.gallery-item-card {
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 10px;
-    text-align: center;
-}
-
-.gallery-item-card img {
-    width: 100%;
-    aspect-ratio: 3/2;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item-card img:hover {
-    transform: scale(1.05);
-}
-
-.game-info {
-    padding: 10px 0 5px 0;
-}
-
-.game-info h4 {
-    margin-bottom: 12px;
-    font-size: 0.9rem;
     color: #ffffff;
 }
 
-.play-btn {
-    display: inline-block;
-    padding: 6px 15px;
-    background-color: #4facfe;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.play-btn:hover {
-    background-color: #ffffff;
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    background-color: #58a6ff;
     color: #0d1117;
+    border-radius: 50%;
+    font-size: 0.9rem;
 }
 
+/* === SECTION SOFTWARE & TOOLS === */
+.software-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px; 
+    margin-bottom: 20px; 
+}
+
+.tool-badge {
+    display: flex;
+    align-items: center;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    padding: 4px 10px 4px 4px; 
+    border-radius: 20px;
+    font-size: 0.75rem; 
+    color: #c9d1d9;
+    font-weight: 500;
+    gap: 6px; 
+}
+
+.tool-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px; 
+    height: 20px; 
+    background-color: #30363d;
+    color: #58a6ff;
+    border-radius: 50%;
+    font-size: 0.65rem; 
+}
+
+/* ======================================================== */
 /* === BAGIAN PORTFOLIO (TAB) === */
+/* ======================================================== */
 .portfolio-section {
     width: 100%;
     max-width: 500px;
@@ -181,6 +211,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
+    position: relative; 
 }
 
 .tab-btn:hover {
@@ -189,9 +220,35 @@ body {
 }
 
 .tab-btn.active {
-    border-bottom: 3px solid #4facfe;
     color: #ffffff;
     background-color: #161b22;
+    border-color: #4facfe; 
+}
+
+/* --- ANIMASI GARIS TAB (YANG SUDAH BAGUS) --- */
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #4facfe;
+    border-radius: 50px;
+    animation: garisNapas 1s infinite alternate ease-in-out;
+}
+
+@keyframes garisNapas {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0px 0px 5px rgba(79, 172, 254, 0.4);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(4px); 
+        box-shadow: 0px 4px 12px rgba(79, 172, 254, 1); 
+        opacity: 1;
+    }
 }
 
 .tab-content {
@@ -229,11 +286,12 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .gallery-item:hover img {
     transform: scale(1.05);
+    filter: brightness(0.7);
 }
 
 /* === STYLE UNTUK TAB 3D (PROJECT CARD) === */
@@ -257,10 +315,25 @@ body {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: #4facfe;
+    transform: translateY(-3px);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.7);
+    cursor: pointer;
 }
 
 .project-info {
     padding: 15px;
+    position: relative;
+    background-color: #161b22;
+    z-index: 2;
 }
 
 .project-info h4 {
@@ -282,9 +355,75 @@ body {
     margin-top: 5px;
 }
 
-.project-card:hover {
-    border-color: #4facfe;
-    transform: translateY(-3px);
+/* === SLIDE ROBLOX SHOWCASE === */
+.roblox-slide {
+    width: 100%;
+    max-width: 500px;
+    background-color: transparent; 
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideDown 0.4s ease-out;
+}
+
+.roblox-slide h3 {
+    margin-bottom: 20px;
+    color: #4facfe;
+    font-size: 1.5rem;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-item-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+}
+
+.gallery-item-card img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.7);
+}
+
+.game-info {
+    padding: 10px 0 5px 0;
+}
+
+.game-info h4 {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.play-btn {
+    display: inline-block;
+    padding: 6px 15px;
+    background-color: #4facfe;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #ffffff;
+    color: #0d1117;
 }
 
 /* === MODAL LIGHTBOX (LAYAR PENUH) === */
@@ -340,87 +479,7 @@ body {
     padding: 5px;
 }
 
-/* 1. Custom Scrollbar */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0d1117; }
-::-webkit-scrollbar-thumb { background: #30363d; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #8b949e; }
-
-/* 2. Efek Hover Galeri */
-.gallery-item img, .gallery-item-card img, .project-card img {
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-.gallery-item:hover img, .gallery-item-card:hover img, .project-card:hover img {
-    transform: scale(1.05);
-    filter: brightness(0.7);
-    cursor: pointer;
-}
-
-/* 3. Section Software & Tools (Sudah Diupdate) */
-.software-tools {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px; /* Diperkecil dari 10px agar jarak antar badge lebih rapat */
-    margin-bottom: 20px; /* Diperkecil dari 25px */
-}
-
-.tool-badge {
-    display: flex;
-    align-items: center;
-    background-color: #21262d;
-    border: 1px solid #30363d;
-    padding: 4px 10px 4px 4px; /* Padding diperkecil (atas-bawah 4px, kanan 10px, kiri 4px) */
-    border-radius: 20px;
-    font-size: 0.75rem; /* Font teks diperkecil dari 0.85rem */
-    color: #c9d1d9;
-    font-weight: 500;
-    gap: 6px; /* Jarak antara lingkaran ikon dan teks diperkecil */
-}
-
-/* 3.1 Styling Ikon Lingkaran */
-.tool-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px; /* Lingkaran ikon diperkecil dari 24px */
-    height: 20px; /* Lingkaran ikon diperkecil dari 24px */
-    background-color: #30363d;
-    color: #58a6ff;
-    border-radius: 50%;
-    font-size: 0.65rem; /* Ukuran ikon FontAwesome di dalamnya diperkecil */
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    background: #21262d;
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: #c9d1d9;
-    margin: 5px;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    background: #30363d;
-}
-
-.social-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-    height: 28px;
-    background-color: #58a6ff;
-    color: #0d1117;
-    border-radius: 50%;
-    margin-right: 10px;
-    font-size: 0.9rem;
-}
-
-/* 4. CTA Section & Footer */
+/* === CTA SECTION & FOOTER === */
 .cta-section {
     text-align: center;
     padding: 40px 20px;
@@ -429,6 +488,7 @@ body {
     border: 1px solid #30363d;
     border-radius: 12px;
 }
+
 .cta-button {
     display: inline-block;
     padding: 12px 28px;
@@ -440,10 +500,12 @@ body {
     font-size: 1rem;
     transition: background 0.3s, transform 0.2s;
 }
+
 .cta-button:hover {
     background-color: #238636;
     transform: translateY(-2px);
 }
+
 .footer {
     text-align: center;
     padding: 20px;
@@ -453,7 +515,13 @@ body {
     width: 100%;
 }
 
-/* 5. Persiapan Animasi Scroll */
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #8b949e; }
+
+/* === ANIMASI SCROLL (FADE IN) === */
 .fade-in {
     opacity: 0;
     transform: translateY(40px);

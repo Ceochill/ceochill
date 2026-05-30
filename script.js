@@ -1,36 +1,34 @@
-function openTab(tabName) {
-    // 1. Sembunyikan semua konten tab terlebih dahulu
-    let tabContents = document.getElementsByClassName("tab-content");
-    for (let i = 0; i < tabContents.length; i++) {
-        tabContents[i].style.display = "none";
+// === FUNGSI TAB PORTFOLIO ===
+function openTab(tabId) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => {
+        content.style.display = 'none';
+    });
+
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    const selectedContent = document.getElementById(tabId);
+    if (selectedContent) {
+        selectedContent.style.display = 'block';
     }
 
-    // 2. Hilangkan efek garis bawah/aktif dari semua tombol tab
-    let tabButtons = document.getElementsByClassName("tab-btn");
-    for (let i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].classList.remove("active");
+    const activeBtn = document.querySelector(`.tab-btn[onclick="openTab('${tabId}')"]`);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
     }
-
-    // 3. Tampilkan konten tab yang sedang dipilih/diklik
-    document.getElementById(tabName).style.display = "block";
-
-    // 4. Tambahkan efek aktif ke tombol yang baru saja diklik
-    event.currentTarget.classList.add("active");
 }
 
-// === FUNGSI UNTUK LIGHTBOX (LAYAR PENUH) ===
-
-// Fungsi untuk membuka gambar penuh
+// === FUNGSI UNTUK LIGHTBOX (LAYAR PENUH GALERI) ===
 function openModal(imageSrc) {
     let modal = document.getElementById("imageModal");
     let fullImage = document.getElementById("fullImage");
-    
-    // Tampilkan modal dan ganti sumber gambar
     modal.style.display = "flex"; 
     fullImage.src = imageSrc; 
 }
 
-// Fungsi untuk menutup gambar penuh
 function closeModal() {
     let modal = document.getElementById("imageModal");
     modal.style.display = "none";
@@ -39,24 +37,56 @@ function closeModal() {
 // === FUNGSI UNTUK MENAMPILKAN ROBLOX SHOWCASE ===
 function toggleRobloxShowcase() {
     var showcase = document.getElementById("roblox-showcase");
-    
-    // Mengecek apakah showcase sedang disembunyikan
     if (showcase.style.display === "none" || showcase.style.display === "") {
         showcase.style.display = "block";
-        // Scroll layar agar bagian ini langsung terlihat (smooth scroll)
         showcase.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-        // Jika sedang tampil, maka sembunyikan kembali
         showcase.style.display = "none";
     }
 }
 
-// === FUNGSI ANIMASI MUNCUL SAAT DI-SCROLL ===
+// === FUNGSI EFEK KETIK (TYPEWRITER) ===
+const typedTextSpan = document.getElementById("typewriter");
+const textArray = ["Halo", "Hello", "你好", "こんにちは"];
+const typingDelay = 150;
+const erasingDelay = 100;
+const newTextDelay = 2000;
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+    } else {
+        setTimeout(erase, newTextDelay);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+    } else {
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 500);
+    }
+}
+
+// === JALANKAN ANIMASI SAAT WEB DIMUAT ===
 document.addEventListener("DOMContentLoaded", function() {
+    // Jalankan efek ketik
+    if(typedTextSpan) {
+        setTimeout(type, 1000);
+    }
+
+    // Jalankan animasi scroll (Fade In)
     const faders = document.querySelectorAll('.fade-in');
-    
     const appearOptions = {
-        threshold: 0.15, // Elemen muncul saat 15% bagiannya masuk layar
+        threshold: 0.15, 
         rootMargin: "0px 0px -50px 0px"
     };
 
